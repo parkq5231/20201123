@@ -34,10 +34,10 @@ public class CalendarExample {
 		for (i = 1; i <= LDate; i++) {
 			//List배열에 str타입의 Day와 int타입의 i가 들어간다면
 			//순서상으로 if조건문에서 7번째마다 나머지가 0일때를 사용하여 결과가 나올듯
-			List sum=List(Day,i);
+			//List sum=List(Day,i);
 			System.out.printf("%4d", i);	
 
-			if (sum%7==0) {
+			if (i%7==0) {
 				System.out.println();
 			}
 		}
