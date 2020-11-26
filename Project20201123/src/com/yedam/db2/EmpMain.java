@@ -51,7 +51,8 @@ public class EmpMain {
 				vo.setEmail(email);
 				vo.setHireDate(hireDate);
 				vo.setJobId(jobId);
-
+				
+				
 				service.insertEmp(vo);
 
 			} else if (selectNo == 4) {

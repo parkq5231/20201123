@@ -1,11 +1,15 @@
 package com.ydm.CalendarExample;
 
+
 import java.time.DayOfWeek;
 import java.time.MonthDay;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class CalendarExample {
 	public static void showCal(int year, int month) {
+		
 		System.out.println("	[" + year + "년 " + (month + 1) + "월 달력]");
 
 		String[] Arrays = { "Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat" };
@@ -26,13 +30,22 @@ public class CalendarExample {
 			System.out.printf("%4s",aa);
 
 		}
+		int i=0;
+		for (i = 1; i <= LDate; i++) {
+			//List배열에 str타입의 Day와 int타입의 i가 들어간다면
+			//순서상으로 if조건문에서 7번째마다 나머지가 0일때를 사용하여 결과가 나올듯
+			List sum=List(Day,i);
+			System.out.printf("%4d", i);	
 
-		for (int i = 1; i <= LDate; i++) {
-
-			System.out.printf("%4d", i);
-
+			if (sum%7==0) {
+				System.out.println();
+			}
 		}
+		
 		// DAY와 i의 값을 배열에 넣어 그 값의 i%7==0을 하면 될거같다
+		
+	
+		
 		
 
 		System.out.println();

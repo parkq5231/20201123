@@ -20,6 +20,8 @@ public class EmpDAO {// 데이터 처리 기능을 넣을 것
 		conn = DAO.getConnection();
 		sql = "select* from emp1 order by 1";
 		List list = new ArrayList();
+		//이게모냐 List배열의 list변수는 이해가 가는데 그냥 list배열이라고 봐도 되나?
+		
 
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -28,6 +30,7 @@ public class EmpDAO {// 데이터 처리 기능을 넣을 것
 				EmployeeVO vo = new EmployeeVO();
 				vo.setEmployeeId(rs.getInt("employee_id"));
 				vo.setFirstName(rs.getString("first_name"));
+				//first_name이라는 문자열 값을 rs에서 찾아 그 값을 vo의setFirstName에 넣어주겠단 소린가 
 				list.add(vo);// 위 두줄 입력한 값이 여기에 담김
 			}
 		} catch (SQLException e) {
