@@ -9,7 +9,7 @@ public class EmpServiceImpl implements EmpService {// 데이터 접근 및 처�
 	@Override
 	public List getEmpList() {
 		return dao.getEmpList();
-	}	
+	}
 
 	@Override
 	public EmployeeVO getEmp(int empId) {
@@ -30,4 +30,10 @@ public class EmpServiceImpl implements EmpService {// 데이터 접근 및 처�
 	public void deleteEmp(int empId) {
 		dao.deleteEmp(empId);
 	}
+
+	@Override
+	public List<EmployeeVO> getDeptList(String dept) {
+		return dao.getDeptList(dept);
+	}
+
 }// end of class

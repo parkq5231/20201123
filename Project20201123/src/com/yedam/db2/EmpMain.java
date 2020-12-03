@@ -11,7 +11,7 @@ public class EmpMain {
 
 		while (true) {
 			System.out.println("------------------------------");
-			System.out.println("1.전체조회 2.한건조회 3.입력 4.수정 5.삭제 6.종료");
+			System.out.println("1.전체조회 2.한건조회 3.입력 4.수정 5.삭제 6.종료 7.부서별조회");
 			System.out.println("------------------------------");
 			System.out.println("선택> ");
 			int selectNo = scn.nextInt();
@@ -51,8 +51,7 @@ public class EmpMain {
 				vo.setEmail(email);
 				vo.setHireDate(hireDate);
 				vo.setJobId(jobId);
-				
-				
+
 				service.insertEmp(vo);
 
 			} else if (selectNo == 4) {
@@ -88,7 +87,19 @@ public class EmpMain {
 
 			} else if (selectNo == 6) {
 				break;
+			} else if (selectNo == 7) {
+				System.out.println("조회할 부서명: ");
+				scn.nextLine();
+				String dept = scn.nextLine();
+				System.out.println(dept);
+				List<EmployeeVO> list = service.getDeptList(dept);
+				for (EmployeeVO aa : list) {
+					EmployeeVO vo = (EmployeeVO) aa;
+					vo.showEmpInfo();
+				}
+
 			}
+
 		} // end of while
 
 	}// end of main
